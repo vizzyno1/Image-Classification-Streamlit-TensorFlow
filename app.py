@@ -6,7 +6,7 @@ from PIL import Image
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
 	model = tf.keras.models.load_model('./flower_model_trained.hdf5')
 	return model
